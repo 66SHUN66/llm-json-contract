@@ -37,7 +37,7 @@ def extract(text):
     fixed_variants = []
     for c in attempts:
         fixed_variants.append(c)
-        no_trail = re.sub(r",\s*([}\])", r"\1", c)
+        no_trail = re.sub(r",\s*([}\]])", r"\1", c)
         if no_trail != c:
             fixed_variants.append(no_trail)
         py_lits = no_trail.replace("True", "true").replace("False", "false").replace("None", "null")
